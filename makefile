@@ -27,7 +27,7 @@ else
 endif
 
 # Flags passed to the preprocessor.
-CPPFLAGS += -Wall -DPROC_ROOT='"$(PROC_ROOT)"' -MMD -MP -Isrc
+CPPFLAGS += -Wall -DPROC_ROOT='"$(PROC_ROOT)"' -MMD -MP -Isrc -std=c++11
 TEST_CPPFLAGS = $(CPPFLAGS) -isystem $(GTEST_DIR)/include
 
 # ALL .cpp files.
@@ -44,7 +44,7 @@ INFO_TEST_OBJS = $(INFO_IMPL_SRCS:src/%.cpp=bin/%_.o)
 INFO_TEST_DEPS = $(INFO_IMPL_SRCS:src/%.cpp=bin/%_.d)
 
 # The .cpp files under the root of src/. These are the only classes not compiled
-# into the tests, since testing ncurses code is beyond the scope of what 
+# into the tests, since testing ncurses code is beyond the scope of what
 # is reasonable for this class.
 MAIN_SRCS = $(wildcard src/*.cpp)
 MAIN_OBJS = $(MAIN_SRCS:src/%.cpp=bin/%.o)

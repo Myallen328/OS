@@ -22,7 +22,7 @@ MemoryInfo get_memory_info() {
   istringstream iss(line);
 
    if (!(iss >> temp >> temp_number)) {
-     return MemoryInfo();
+     continue;
    }
    if (temp == "MemTotal:") {
       memDawg.total_memory = temp_number;
